@@ -1,8 +1,10 @@
 import React from "react";
 import { browserHistory } from "react-router";
 import {Link} from "react-router";
+import PropTypes from 'prop-types';
 
 export class Home extends React.Component {
+
     constructor(props) {
         super(props);
         this.state = {
@@ -125,7 +127,7 @@ export class Home extends React.Component {
                                 <input className="col-md-3" type="password" name="password" value={this.state.password} onChange={this.handleInputChange} />
                             </div>
                             <div className="row">
-                                <input className="col-md-2" type="submit" value="Login" className="btn btn-primary"/>
+                                <input type="submit" value="Login" className="btn btn-primary col-md-2"/>
                                 {button}
                             </div>
                         </form>
@@ -136,3 +138,6 @@ export class Home extends React.Component {
         );
     }
 }
+Home.propTypes = {
+    route: PropTypes.string.isRequired,
+};

@@ -117,7 +117,7 @@ export class Register extends React.Component {
                     <input className="col-md-3" type="password" name="password" value={this.state.password} onChange={this.handleInputChange} />
                 </div>
                 <div className="row">
-                    <input className="col-md-2" type="submit" value="Login" className="btn btn-primary"/>
+                    <input type="submit" value="Login" className="btn btn-primary col-md-2"/>
                     {button}
                 </div>
             </form>

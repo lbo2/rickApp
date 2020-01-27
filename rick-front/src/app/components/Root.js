@@ -1,6 +1,5 @@
 import React from "react";
-
-import {Header} from "./Header";
+import PropTypes from 'prop-types';
 
 export class Root extends React.Component {
     render() {
@@ -11,3 +10,6 @@ export class Root extends React.Component {
         );
     }
 }
+Root.propTypes = {
+    children: PropTypes.string.isRequired,
+};

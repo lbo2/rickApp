@@ -23,8 +23,6 @@ export class Header extends React.Component {
 
 
     render() {
-        const styleLoggedIn = (!this.state.isLoggedIn ? {"display": 'none'} : {});
-        const styleLoggedOut = (this.state.isLoggedIn ? {"display": 'none'} : {});
 
         return (
             <nav className="navbar navbar-default">
@@ -41,4 +39,4 @@ export class Header extends React.Component {
             </nav>
         );
     }
-};
+}
