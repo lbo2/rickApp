@@ -4,5 +4,5 @@ Requirements: [Docker Community Edition](https://www.docker.com/community-editio
 
 To start the app run: `docker-compose up`.
 
-The frontend will be started on http://localhost:8080 and the backend in port 3000.
+The frontend will be started on http://localhost:80 and the backend in port 3000.
 
