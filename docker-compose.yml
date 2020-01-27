@@ -1,0 +1,35 @@
+version: "3"
+services:
+    redis:
+        image: redis
+        container_name: cache
+        expose:
+          - 6379
+    frontend:
+        container_name: rick_front
+        build:
+            context: ./rick-front
+            dockerfile: Dockerfile
+        image: jmontero/rick_front
+        ports:
+            - "8080:8080"
+        volumes:
+            - ./rick-front:/usr/src/app
+    backend:
+        container_name: rick_api
+        build:
+            context: ./rick-api
+            dockerfile: Dockerfile
+        image: jmontero/rick_api
+        ports:
+            - 3000:3000
+        volumes:
+            - ./rick-api:/var/www/app
+        links:
+            - redis
+        environment:
+            - REDIS_URL=redis://cache
+            - NODE_ENV=development
+            - PORT=3000
+        command:
+            sh -c 'npm i && node server.js'
