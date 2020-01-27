@@ -9,7 +9,7 @@
     "build:prod": "webpack -p && cp src/index.html dist/index.html",
     "test": "jest",
     "test:coverage": "jest -coverage",
-    "lint": "npx eslint --ext .jsx,.js ./src"
+    "lint": "eslint --ext .jsx,.js ./src"
   },
   "keywords": [
     "reactjs"
