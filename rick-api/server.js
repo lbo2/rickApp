@@ -28,7 +28,6 @@ app.get('/healthcheck', (req, res, next) => {
 		timestamp: Date.now()
 	};
 	try {
-    console.log(healthcheck);
     response = {err: false, response: healthcheck}
     resp(res, response, 200, next);
 		res.send();
@@ -45,7 +44,6 @@ app.post('/user/add', (req, res, next) => {
   let response;
   client.exists(email, (err, reply) => {
     if (reply === 1) {
-        console.log('exists');
         response = {err: true, response: "Email already exists"}
         resp(res, response, 400, next);
     } else {
@@ -123,7 +121,6 @@ app.post('/getdata', (req, res, next) => {
                   image: character.image
               })
             });
-            console.log(data);
             response = {err: false, response: "Data found ", data: data};
             resp(res, response, 200, next);
           }else{

@@ -1,18 +1,11 @@
-#base image
 FROM node:12
 
-# set working directory
-RUN mkdir /usr/src/app
-#copy all files from current directory to docker
-COPY . /usr/src/app
+COPY package*.json ./
 
-WORKDIR /usr/src/app
+RUN npm ci -qy
 
-# add `/usr/src/app/node_modules/.bin` to $PATH
-ENV PATH /usr/src/app/node_modules/.bin:$PATH
+COPY . .
 
-# install and cache app dependencies
-RUN yarn
+EXPOSE 8080
 
-# start app
-CMD ["npm", "run", "build"]
+CMD ["npm", "start"]
