@@ -8,7 +8,8 @@
     "build": "webpack -d && cp src/index.html dist/index.html && webpack-dev-server --content-base src/ --inline --hot --host 0.0.0.0 --port 8080 --history-api-fallback",
     "build:prod": "webpack -p && cp src/index.html dist/index.html",
     "test": "jest",
-    "test:coverage": "jest -coverage"
+    "test:coverage": "jest -coverage",
+    "lint": "npx eslint --ext .jsx,.js ./src"
   },
   "keywords": [
     "reactjs"
